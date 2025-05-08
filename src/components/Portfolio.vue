@@ -436,7 +436,7 @@ export default {
       // Crear un enlace temporal
       const link = document.createElement('a');
       link.href = fileUrl;
-      link.download = 'CV_Antonio_Pasasin.pdf'; // Nombre del archivo descargado
+      link.download = 'CV_Eliazar_Rebollo.pdf'; // Nombre del archivo descargado
       document.body.appendChild(link);
 
       // Simular clic en el enlace
