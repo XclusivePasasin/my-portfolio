@@ -12,7 +12,7 @@
                   <img src="https://i.pinimg.com/236x/a8/78/00/a87800206799426f5a03785aea5141ad.jpg" width="105%" alt="Avatar" />
                 </v-avatar>
                 <h3 class="text-white">Antonio Pasasin</h3>
-                <p class="text-white">Desarrollador web</p>
+                <p class="text-white">Backend y Frontend Developer</p>
 
                 <div class="d-flex justify-center mt-2 text-white icon-container">
                    <!-- LinkedIn -->
@@ -245,7 +245,7 @@
                         <v-avatar size="40" class="mr-3" color="info">
                           <v-icon class="text-white">mdi-briefcase</v-icon>
                         </v-avatar>
-                        Developer Full Stack 
+                        Backend y Frontend Developer
                       </v-card-title>
                       <v-card-subtitle class="text-body-2 grey--text text--darken-1 text-content mt-2">
                         <v-icon small class="mr-1">mdi-office-building</v-icon>
