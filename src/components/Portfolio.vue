@@ -430,19 +430,13 @@
 export default {
   methods: {
     downloadCV() {
-      // Ruta del archivo PDF (asegúrate de que esté en la carpeta `public`)
-      const fileUrl = '/cv.pdf';
+      const fileUrl = '/CV_Eliazar_Rebollo.pdf';
 
-      // Crear un enlace temporal
       const link = document.createElement('a');
       link.href = fileUrl;
-      link.download = 'CV_Eliazar_Rebollo.pdf'; // Nombre del archivo descargado
+      link.download = 'CV_Eliazar_Rebollo.pdf';
       document.body.appendChild(link);
-
-      // Simular clic en el enlace
       link.click();
-
-      // Eliminar el enlace temporal
       document.body.removeChild(link);
     },
   },
