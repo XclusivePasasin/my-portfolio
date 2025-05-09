@@ -245,7 +245,7 @@
                         <v-avatar size="40" class="mr-3" color="info">
                           <v-icon class="text-white">mdi-briefcase</v-icon>
                         </v-avatar>
-                        Developer Full Stack Jr
+                        Developer Full Stack 
                       </v-card-title>
                       <v-card-subtitle class="text-body-2 grey--text text--darken-1 text-content mt-2">
                         <v-icon small class="mr-1">mdi-office-building</v-icon>
