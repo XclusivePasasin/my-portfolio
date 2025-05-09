@@ -400,7 +400,7 @@
 .education-card {
   height: 220x;
   border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
