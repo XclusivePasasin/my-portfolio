@@ -22,7 +22,7 @@ watch(
 <template>
   <v-app id="app">
     <v-toolbar flat class="transparent">
-      <v-toolbar-title class="ml-12 toolbar-title">Portafolio</v-toolbar-title>
+      <v-toolbar-title class="ml-6 toolbar-title">Portfolio</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-switch
         v-model="isDark"
