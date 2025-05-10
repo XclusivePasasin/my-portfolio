@@ -1,4 +1,12 @@
 <template>
+   <div class="particles-container h-100">
+    <div 
+      v-for="(particle, index) in particles" 
+      :key="index" 
+      class="particle" 
+      :style="particleStyle(particle)"
+    ></div>
+  </div>
   <v-container class="container">
     <v-row justify="center">
       <v-col cols="12" sm="12" md="10" lg="12">
@@ -12,7 +20,7 @@
                   <img src="https://i.pinimg.com/236x/a8/78/00/a87800206799426f5a03785aea5141ad.jpg" width="105%" alt="Avatar" />
                 </v-avatar>
                 <h3 class="text-white">Antonio Pasasin</h3>
-                <p class="text-white">Backend y Frontend Developer</p>
+                <p class="text-white">Backend and Frontend Developer</p>
 
                 <div class="d-flex justify-center mt-2 text-white icon-container">
                    <!-- LinkedIn -->
@@ -437,6 +445,47 @@
   height: 100%;
 }
 
+.floating-balls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(100, 149, 237, 0.2); /* Light blue with transparency */
+  animation: float 15s infinite linear;
+  opacity: 0.3;
+}
+
+.v-theme--dark .ball {
+  background: rgba(100, 200, 255, 0.15); /* Lighter blue for dark mode */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-100px) translateX(50px);
+  }
+  50% {
+    transform: translateY(-50px) translateX(100px);
+  }
+  75% {
+    transform: translateY(-100px) translateX(-50px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+} 
+
 .container {
   max-width: 100%;
 }
@@ -689,11 +738,83 @@
     height: 50px;
   }
 }
-  
+
+/* Estilos para las partículas */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Usar viewport height */
+  z-index: -1; /* Detrás de todo */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+              rgba(100, 149, 237, 0.4) 0%, 
+              rgba(100, 149, 237, 0.1) 70%);
+  animation: float 20s infinite ease-in-out;
+  opacity: 0.4;
+  filter: blur(1px);
+  transform: translateZ(0); /* Mejora el rendimiento de la animación */
+}
+
+.v-theme--dark .particle {
+  background: radial-gradient(circle, 
+              rgba(100, 200, 255, 0.3) 0%, 
+              rgba(100, 200, 255, 0.05) 70%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -30px) rotate(5deg);
+  }
+  50% {
+    transform: translate(20px, -50px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-30px, -20px) rotate(3deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -30px) rotate(5deg);
+  }
+  50% {
+    transform: translate(20px, -50px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-30px, -20px) rotate(3deg);
+  }
+}
 </style>
 
 <script>
 export default {
+  data() {
+    return {
+      particles: Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      size: Math.random() * 15 + 5,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      delay: Math.random() * 20,
+      duration: 15 + Math.random() * 30,
+      blur: Math.random() * 2,
+    }))
+    };
+  },
   mounted() {
     // Agregar efecto de movimiento aleatorio al pasar el mouse
     const icons = document.querySelectorAll('.language-icon');
@@ -718,6 +839,17 @@ export default {
     });
   },
   methods: {
+      particleStyle(particle) {
+        return {
+          width: `${particle.size}px`,
+          height: `${particle.size}px`,
+          left: `${particle.x}%`,
+          top: `${particle.y}%`,
+          animationDelay: `${particle.delay}s`,
+          animationDuration: `${particle.duration}s`,
+          filter: `blur(${particle.blur}px)`,
+        };
+      },
     downloadCV() {
       const fileUrl = '/CV_Eliazar_Rebollo.pdf';
 
