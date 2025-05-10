@@ -418,7 +418,7 @@
                         show-arrows
                       >
                         <v-slide-item
-                          v-for="(chip, i) in ['MySQL', 'Trabajo en equipo', 'SQL', 'Report Builder']"
+                          v-for="(chip, i) in ['MySQL', 'Teamwork', 'SQL', 'Report Builder']"
                           :key="i"
                         >
                           <v-chip small color="info">{{ chip }}</v-chip>
