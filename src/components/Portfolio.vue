@@ -16,7 +16,7 @@
             <!-- 📌 Columna Izquierda (Perfil, fondo azul) -->
             <v-col cols="12" sm="12" md="4">
               <v-card class="pa-4 bg-primary text-white h-100 section-one" elevation="0">
-                <v-avatar size="120" class="mb-4">
+                <v-avatar size="110" class="mb-4">
                   <img src="https://i.postimg.cc/3NFBFHsB/MG-7211-P-1.jpg" width="105%" alt="Avatar" />
                 </v-avatar>
                 <h3 class="text-white">Antonio Pasasin</h3>
